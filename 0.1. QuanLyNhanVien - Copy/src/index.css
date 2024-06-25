@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-[36px] mr-8;
+        /* @apply font-bold; */
+    }
+    h2 {
+        @apply text-[30px] mr-8;
+        /* @apply font-bold; */
+    }
+    h3 {
+        @apply text-[25px] mr-8;
+        /* @apply font-bold; */
+    }
+    h4 {
+        @apply text-[21px] mr-8;
+        /* @apply font-semibold; */
+    }
+    h5 {
+        @apply text-[18px] mr-8;
+        /* @apply font-semibold; */
+    }
+    h6 {
+        @apply text-[16px] mr-8;
+        /* @apply font-semibold; */
+    }
+
+    button {
+        @apply px-4 py-[10px] mx-2;
+        @apply rounded-[5px];
+        @apply text-white;
+        @apply bg-red-600;
+        @apply hover:opacity-[0.80];
+        @apply flex items-center;
+        /* @apply fill-current;
+        @apply transition;
+        @apply duration-200;
+        @apply ease-in-out; */
+    }
+
+    input {
+        @apply w-full;
+        @apply border shadow;
+        @apply my-2 px-3 py-[10px];
+        @apply rounded;
+        @apply text-gray-700;
+        @apply focus:outline-[#93c7e3];
+
+        /* checkbox: w-5 h-5 */
+    }
+    table {
+        @apply w-full;
+    }
+
+    thead {
+        @apply h-[90px];
+        @apply text-[18px];
+        @apply border-y-[3px];
+    }
+
+    tr {
+        @apply h-[72px] border-y-[1px];
+    }
+
+    th,
+    td {
+        @apply text-left;
+        @apply indent-6;
+    }
+
+    label {
+        @apply text-[17px] font-semibold;
+    }
+}
+
+@layer components {
+    .block-container {
+        @apply w-full;
+        @apply flex;
+        @apply items-center;
+        @apply h-[85px];
+        @apply bg-[#435d7d];
+        @apply px-10;
+        @apply justify-between;
+        @apply shadow-xl;
+        /* @apply flex-wrap;
+        @apply justify-center; */
+    }
+    .block-box {
+        @apply flex;
+        @apply items-center;
+        @apply justify-center;
+    }
+    .block-table {
+        @apply mx-10;
+        @apply my-5;
+    }
+    .icon {
+        @apply text-[23px] mx-3;
+        @apply cursor-pointer;
+        @apply hover:opacity-80;
+    }
+    .icon-btn {
+        @apply text-[23px] mr-2;
+    }
+    .icon-exit {
+        @apply scale-[130%];
+        @apply cursor-pointer;
+        @apply hover:text-red-600;
+    }
+    .bg-blur {
+        @apply fixed bg-black w-[100%] h-[100%] bg-opacity-20;
+    }
+    .form {
+        @apply fixed left-[50%] translate-x-[-50%] top-[50%] translate-y-[-60%];
+        @apply w-[600px] min-h-0 bg-white rounded-2xl shadow-2xl;
+    }
+    .form-top {
+        @apply px-12 py-8 flex justify-between items-center border-b-2;
+    }
+    .form-main {
+        @apply px-12 py-5;
+    }
+    .form-bottom {
+        @apply px-12 py-5 h-[80px] bg-gray-200 flex justify-end rounded-b-2xl text-[19px];
+    }
+    .error {
+        @apply mb-5 text-red-500 italic;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #000 !important;
+}

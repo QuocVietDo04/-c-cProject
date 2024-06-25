@@ -1,0 +1,168 @@
+#TODO: Code giao diện
+
+#* Header.jsx
+import React from "react";
+import { Icon } from "@iconify/react";
+
+function Header() {
+    return (
+        <div className="block-container">
+            <h2 className="text-white font-light">
+                Quản lý <b>Nhân viên</b>
+            </h2>
+            <div className="block-box">
+                <button>
+                    <Icon icon="fa6-solid:circle-minus" className="icon-btn" />
+                    Xóa
+                </button>
+                <button className="bg-green-600">
+                    <Icon icon="fa6-solid:circle-plus" className="icon-btn" />
+                    Thêm nhân viên
+                </button>
+            </div>
+        </div>
+    );
+}
+
+export default Header;
+
+
+#* Table.jsx
+import React from "react";
+import TableRow from "./TableRow";
+
+function Table() {
+    return (
+        <div className="block-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th className="w-[5%]">
+                            <input type="checkbox" className="w-5 h-5" />
+                        </th>
+                        <th className="w-[15%]">Họ và tên</th>
+                        <th className="w-[19%]">Thư điện tử</th>
+                        <th className="w-[36%]">Địa chỉ thường trú</th>
+                        <th className="w-[15%]">Số điện thoại</th>
+                        <th className="w-[10%] text-center indent-0">
+                            Hành động
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    );
+}
+
+export default Table;
+
+
+#* TableRow.jsx
+import React from "react";
+import { Icon } from "@iconify/react";
+
+function TableRow() {
+    return (
+        <tr>
+            <td className="">
+                <input type="checkbox" className="w-5 h-5" />
+            </td>
+            <td className="">Họ và tên</td>
+            <td className="">tdư điện tử</td>
+            <td className="">Địa chỉ</td>
+            <td className="">Số điện thoại</td>
+            <td className="block-box h-[72px]">
+                <Icon icon="fa:pencil" className="icon text-amber-500" />
+                <Icon icon="fa:trash" className="icon text-red-500" />
+            </td>
+        </tr>
+    );
+}
+
+export default TableRow;
+
+
+#* Form.jsx
+import React from "react";
+import { Icon } from "@iconify/react";
+
+function Form() {
+    return (
+        <div>
+            <div className="bg-blur">
+                <div className="form">
+                    <div className="form-top">
+                        <h2 className="font-medium">Add Employee</h2>
+                        <Icon
+                            icon="fa:close"
+                            className="icon-exit text-black"
+                        />
+                    </div>
+                    <div className="form-main">
+                        <label htmlFor="txtName">Name:</label>
+                        <input
+                            id="txtName"
+                            type="text"
+                        />
+                        <p className="error"></p>
+
+                        <label htmlFor="txtEmail">Email:</label>
+                        <input
+                            id="txtEmail"
+                            type="text"
+                        />
+                        <p className="error"></p>
+
+                        <label htmlFor="txtAddress">Address:</label>
+                        <input
+                            id="txtAddress"
+                            type="text"
+                        />
+                        <p className="error"></p>
+
+                        <label htmlFor="txtPhone">Phone:</label>
+                        <input
+                            id="txtPhone"
+                            type="text"
+                        />
+                        <p className="error"></p>
+                    </div>
+                    <div className="form-bottom">
+                        <button
+                            className="bg-gray-200 font-medium text-red-600 hover:text-red-500"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            className="bg-green-600 px-6"
+                        >
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Form;
+
+
+#* App.jsx
+import React from "react";
+import Header from "./components/Header";
+import Table from "./components/Table";
+import Form from "./components/Form";
+
+function App() {
+    return (
+        <>
+            <Form isFormOpening={isFormOpening} onCloseForm={handleCloseForm} />
+            <Header onOpenForm={handleOpenForm} />
+            <Table />
+        </>
+    );
+}
+
+export default App;
